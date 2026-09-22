@@ -1,10 +1,11 @@
-package com.ism;
+﻿package com.ism;
 
 import java.util.List;
 import java.util.Scanner;
 
 import com.ism.domain.Etudiant;
-import com.ism.repository.memoire.EtudiantRepositoryMemory;
+import com.ism.dto.EtudiantCreateDto;
+import com.ism.factory.RepositoryFactory;
 import com.ism.service.EtudiantService;
 import com.ism.service.EtudiantServiceImpl;
 
@@ -12,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        EtudiantService es = new EtudiantServiceImpl(new EtudiantRepositoryMemory());
+        EtudiantService es = new EtudiantServiceImpl(RepositoryFactory.createEtudiantRepository());
 
         String choix;
         do {
@@ -31,7 +32,7 @@ public class Main {
                     System.out.print("Classe : ");
                     String classe = scanner.nextLine();
 
-                    Etudiant nouveau = new Etudiant(nom, matricule, classe);
+                    EtudiantCreateDto nouveau = new EtudiantCreateDto(nom, matricule, classe);
                     boolean success = es.addEtudiant(nouveau);
                     System.out.println(success ? "Succes" : "Erreur");
                     break;
