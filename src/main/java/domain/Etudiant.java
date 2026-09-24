@@ -1,4 +1,4 @@
-package com.ism.domain;
+﻿package com.ism.domain;
 
 public class Etudiant {
     private String nomComplet;
@@ -12,6 +12,10 @@ public class Etudiant {
         this.nomComplet = nomComplet;
         this.matricule = matricule;
         this.classe = classe;
+    }
+
+    public static EtudiantBuilder builder() {
+        return new EtudiantBuilder();
     }
 
     public String getNomComplet() {
@@ -45,5 +49,30 @@ public class Etudiant {
                 ", matricule='" + matricule + '\'' +
                 ", classe='" + classe + '\'' +
                 '}';
+    }
+
+    public static class EtudiantBuilder {
+        private String nomComplet;
+        private String matricule;
+        private String classe;
+
+        public EtudiantBuilder nomComplet(String nomComplet) {
+            this.nomComplet = nomComplet;
+            return this;
+        }
+
+        public EtudiantBuilder matricule(String matricule) {
+            this.matricule = matricule;
+            return this;
+        }
+
+        public EtudiantBuilder classe(String classe) {
+            this.classe = classe;
+            return this;
+        }
+
+        public Etudiant build() {
+            return new Etudiant(nomComplet, matricule, classe);
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.ism.domain;
+﻿package com.ism.domain;
 
 public class Note {
     private String matiere;
@@ -12,6 +12,10 @@ public class Note {
         this.matiere = matiere;
         this.valeur = valeur;
         this.etudiant = etudiant;
+    }
+
+    public static NoteBuilder builder() {
+        return new NoteBuilder();
     }
 
     public String getMatiere() {
@@ -45,5 +49,30 @@ public class Note {
                 ", valeur=" + valeur +
                 ", etudiant=" + etudiant +
                 '}';
+    }
+
+    public static class NoteBuilder {
+        private String matiere;
+        private double valeur;
+        private Etudiant etudiant;
+
+        public NoteBuilder matiere(String matiere) {
+            this.matiere = matiere;
+            return this;
+        }
+
+        public NoteBuilder valeur(double valeur) {
+            this.valeur = valeur;
+            return this;
+        }
+
+        public NoteBuilder etudiant(Etudiant etudiant) {
+            this.etudiant = etudiant;
+            return this;
+        }
+
+        public Note build() {
+            return new Note(matiere, valeur, etudiant);
+        }
     }
 }
