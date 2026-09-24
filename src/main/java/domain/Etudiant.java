@@ -1,0 +1,49 @@
+package com.ism.domain;
+
+public class Etudiant {
+    private String nomComplet;
+    private String matricule;
+    private String classe;
+
+    public Etudiant() {
+    }
+
+    public Etudiant(String nomComplet, String matricule, String classe) {
+        this.nomComplet = nomComplet;
+        this.matricule = matricule;
+        this.classe = classe;
+    }
+
+    public String getNomComplet() {
+        return nomComplet;
+    }
+
+    public void setNomComplet(String nomComplet) {
+        this.nomComplet = nomComplet;
+    }
+
+    public String getMatricule() {
+        return matricule;
+    }
+
+    public void setMatricule(String matricule) {
+        this.matricule = matricule;
+    }
+
+    public String getClasse() {
+        return classe;
+    }
+
+    public void setClasse(String classe) {
+        this.classe = classe;
+    }
+
+    @Override
+    public String toString() {
+        return "Etudiant{" +
+                "nomComplet='" + nomComplet + '\'' +
+                ", matricule='" + matricule + '\'' +
+                ", classe='" + classe + '\'' +
+                '}';
+    }
+}
