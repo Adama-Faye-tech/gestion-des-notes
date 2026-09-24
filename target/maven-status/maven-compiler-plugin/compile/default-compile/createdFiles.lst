@@ -1,0 +1,6 @@
+gsetiondesnotes\com\Main.class
+gsetiondesnotes\com\domain\Etudiant.class
+gsetiondesnotes\com\repository\memory\EtudiantRepositoryMemory.class
+gsetiondesnotes\com\repository\EtudiantRepository.class
+gsetiondesnotes\com\service\EtudiantService.class
+gsetiondesnotes\com\service\EtudiantServiceImpl.class
