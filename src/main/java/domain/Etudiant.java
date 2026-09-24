@@ -1,6 +1,6 @@
 ﻿package com.ism.domain;
 
-public class Etudiant {
+public class Etudiant extends AbstractEntity {
     private String nomComplet;
     private String matricule;
     private String classe;
